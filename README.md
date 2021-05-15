@@ -14,3 +14,4 @@ This repo will provide you of sample codes and applications that can get you sta
 Supported platforms, please keep in mind this is not an exhaustive list and we can support any platform. Send me an inquiry if there is a platform that I have not covered and you would like to see some samples.
 
 - [**Raspberry Pi**](raspberry_pi_platform/README.md)
+- [**Arduino**]()
