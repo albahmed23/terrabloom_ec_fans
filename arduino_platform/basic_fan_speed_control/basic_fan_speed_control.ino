@@ -8,16 +8,17 @@ void setDutyCycle(int pin, int dutyCycle) {
 
 // Ramp function to ramp up/down the speed of the fan
 // INPUT: rampSpeed - the total amount of time it takes to ramp up/down to the maxDutyCycle
-void rampFanSpeed(int pin, int minDutyCycle, int maxDutyCycle, int rampSpeed) {
+// NOTE: The rampSpeedMS takes a millisecond value
+void rampFanSpeed(int pin, int minDutyCycle, int maxDutyCycle, int rampSpeedMS) {
   if(maxDutyCycle < minDutyCycle) {
     for(int i = minDutyCycle; i >= maxDutyCycle; i--) {
         setDutyCycle(pin, i);
-        delay(rampSpeed/100);
+        delay(rampSpeedMS/100);
     }
   } else {
     for(int i = minDutyCycle; i <= maxDutyCycle; i++) {
         setDutyCycle(pin, i);
-        delay(rampSpeed/100);
+        delay(rampSpeedMS/100);
     }
   }
   
