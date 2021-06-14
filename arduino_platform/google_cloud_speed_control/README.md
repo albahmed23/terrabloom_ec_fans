@@ -1,12 +1,12 @@
-# google_cloud_speed_control
-Follow the following steps to control the speed of your TerraBloom fan via Google IoT Core and by utilizing an ESP32.
+# Control your TerraBloom Fan from Google Cloud
+This project will show you how to control your TerraBloom Fan from the cloud. This tutorial is aimed at anyone who is a beginner and has some familiarity with Arduino IDE. We will be using an ESP32 as our Arduino in this case since the ESP32s come with WiFi and BLE chips already integrated within the microcontroller unit. Let us go ahead and get started.
 
 What you will need:
-- ESP32 DevKitC
+- [ESP32 DevKitC](https://www.mouser.com/ProductDetail/Espressif-Systems/ESP32-DevKitC-32D?qs=%252BEew9%252B0nqrDsObWEpDx6YQ%3D%3D)
 - Arduino installed and setup
-- A TerraBloom Fan
-- Level Shifter Circuit (refer to basic_fan_speed_control to build the level shifter)
-- A Google Cloud Account (you can set one up for FREE)
+- [A TerraBloom Fan](https://terra-bloom.com/)
+- Level Shifter Circuit (refer to [basic_fan_speed_control](../basic_fan_speed_control/README.md) to build the level shifter)
+- [A Google Cloud Account (you can set one up for FREE)](https://cloud.google.com/)
 
 ## Pre-Project Setup
 1. Setup a [Google Cloud Account](https://cloud.google.com/)
@@ -41,14 +41,18 @@ gcloud iot devices create terrabloom-test-dev  --region=us-central1 \
 Now we are ready to connect our fan to the Google Cloud. Follow the following steps to do this.
 
 ## Step 1
-Connect your ESP32 DevKitC to the level shifter. Use GPIO23 to the Base of Q1. Connect your ESP32 DevKitC to your PC with the USB cable.
+Connect your ESP32 DevKitC to the level shifter. Use GPIO23 to the Base of Q1. Connect your ESP32 DevKitC to your PC with the USB cable. Build the circuit shown in the following diagram on a breadboard.
+![ESP32 Breadboard Circuit](../res/esp32_circuit_bb.jpg)
 
 ## Step 2
 Start your Arduino IDE and install the following packages from the Arduino Library Manager:
 - [Google Cloud IoT JWT](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino)
 - [MQTT](https://github.com/256dpi/arduino-mqtt)
 
-To include the libraries: **Sketch** > **Include Library** > **Library Manager** and then search for each of the above mentioned libraries and install them.
+To include the libraries: **Sketch** > **Include Library** > **Manage Libraries** and then search for each of the above mentioned libraries and install them.
+![Access Arduino Library Manager](../res/arduino_lib_manager.jpg)
+![Google Cloud IoT JWT Search](../res/lib_manager_googlecloudiotjwt.jpg)
+![MQTT Library Manager](../res/mqtt_lib_manager.jpg)
 
 ## Step 3
 Download the Repo Zip file and extract it. Then navigate to the **google_cloud_speed_control** subfolder under **arduino_platform**.
